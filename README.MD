@@ -24,7 +24,8 @@ O notebook segue sete fases: análise exploratória, limpeza dos dados, criaçã
 
 ## Estrutura do repositório
 
-- `data/`: arquivos da base de dados
+- `data/raw/`: arquivos originais da base, sem alteração
+- `data/processed/`: dados tratados, gerados no notebook
 - `notebooks/analise_exploratoria.ipynb`: notebook com todo o pipeline
 - `requirements.txt`: dependências com as versões usadas
 - `README.md`: esta documentação

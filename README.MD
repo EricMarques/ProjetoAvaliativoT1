@@ -25,6 +25,21 @@ Os arquivos ficam na pasta `data/`. O notebook baixa os dados automaticamente ca
 
 O notebook segue sete fases: análise exploratória, limpeza dos dados, criação de uma nova variável, divisão treino e teste, escalonamento, ajuste de hiperparâmetros e avaliação final.
 
+## Fluxo do pipeline
+```mermaid
+flowchart LR
+    A[Base UCI<br>data/raw] --> B[Fase 1<br>Análise exploratória]
+    B --> C[Fase 2<br>Limpeza]
+    C --> D[Fase 3<br>Nova variável]
+    D --> E[Fase 4<br>Divisão treino e teste]
+    E --> F[Fase 5<br>Escalonamento]
+    E --> G[Árvore de decisão<br>dados originais]
+    F --> H[KNN<br>dados escalonados]
+    H --> I[Fase 6<br>Ajuste de hiperparâmetros]
+    G --> I
+    I --> J[Fase 7<br>Avaliação e veredito]
+```
+
 ## Estrutura do repositório
 
 - `data/raw/`: arquivos originais da base, sem alteração
@@ -57,9 +72,17 @@ pip install -r requirements.txt
 
 Organizei as tarefas em um quadro no GitHub Projects, uma por fase do notebook. Usei a branch `develop` para reunir o trabalho e criei uma branch de feature para cada tarefa, integrada por pull request.
 
+```mermaid
+flowchart LR
+    A[feature/*<br>uma branch por etapa] -->|pull request| B[develop]
+    B -->|pull request final| C[master]
+```
+
 ## Análise exploratória
 
 A base tem duas classes, com cerca de 64% de leituras de ambiente desocupado e 36% de ocupado.<br>A luminosidade é a variável mais relacionada à ocupação (correlação de 0,93), seguida pelo CO2 (0,77). A razão de umidade é muito correlacionada com a umidade e o CO2, por ser derivada de temperatura e umidade.v
+
+![Correlação de Pearson entre as variáveis](images/correlacao.png)
 
 ## Limpeza dos dados
 
@@ -83,8 +106,12 @@ Testei o KNN com K = 1, 3, 5, 7 e 15 e a árvore de decisão com `max_depth` = 2
 
 ## Resultados
 
-Será preenchido ao final do projeto.
+No conjunto de teste, a árvore de decisão (`max_depth=5`) teve acurácia de 99,23% e o KNN (K = 3) teve 99,03%, uma diferença de uma leitura.<br>Recomendo a árvore de decisão para o sistema, por não precisar de escalonamento, ser mais rápida e ter regras de fácil leitura.
 
-## Melhorias possíveis
+## Melhorias futuras
 
-Será preenchido ao final do projeto.
+- Usar validação cruzada ou um conjunto de validação separado para escolher os hiperparâmetros, sem usar o teste.
+- Dividir os dados por período (treino em dias anteriores, teste em dias seguintes), em vez de aleatoriamente.
+- Usar os três arquivos da base original como foram propostos (um para treino e dois para teste) e coletar dados de mais dias e ambientes.
+- Avaliar outras métricas, como precisão, recall e matriz de confusão, e não só a acurácia.
+- Testar a previsão em fluxo contínuo, como em um sistema em tempo real.

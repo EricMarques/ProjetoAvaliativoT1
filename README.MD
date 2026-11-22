@@ -73,6 +73,10 @@ Criei a variável `razao_co2_luz`, calculada como CO2 dividido por (luminosidade
 
 Dividi a base em 80% para treino e 20% para teste, com estratificação pela variável alvo e semente fixa (`random_state=42`).<br>A divisão é feita antes de qualquer escalonamento, para evitar vazamento de dados do conjunto de teste para o treino.
 
+## Escalonamento
+
+Apliquei o `StandardScaler` só nos dados do KNN, ajustando (`fit_transform`) com o treino e apenas aplicando (`transform`) no teste.<br>A árvore de decisão usa os dados originais, porque o escalonamento não altera os cortes que ela encontra.
+
 ## Resultados
 
 Será preenchido ao final do projeto.

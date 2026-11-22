@@ -2,16 +2,16 @@
 
 Projeto avaliativo do curso SCTEC Aperfeiçoar - Integração de IA com Dados.
 
-## Turma: T1
-## Aluno: Eric Felipe Barros Marques
+### Turma: T1
+### Aluno: Eric Felipe Barros Marques
 
 ## Problema
 
-Em um complexo industrial com sensores ambientais, é preciso saber se uma sala está ocupada ou vazia para desligar o ar-condicionado e a iluminação quando não há ninguém, reduzindo o gasto de energia. Neste projeto monto um pipeline de ciência de dados que prevê essa ocupação (0 = vazia, 1 = ocupada) a partir de leituras de sensores.
+Em um complexo industrial com sensores ambientais, é preciso saber se uma sala está ocupada ou vazia para desligar o ar-condicionado e a iluminação quando não há ninguém, reduzindo o gasto de energia.<br>Neste projeto monto um pipeline de ciência de dados que prevê essa ocupação (0 = vazia, 1 = ocupada) a partir de leituras de sensores.
 
 ## Dados
 
-Uso o Occupancy Detection Dataset, do repositório UCI Machine Learning Repository. As variáveis são temperatura, umidade, luminosidade, CO2, razão de umidade e a ocupação, que é a variável alvo.
+Uso o Occupancy Detection Dataset, do repositório UCI Machine Learning Repository.<br>As variáveis são temperatura, umidade, luminosidade, CO2, razão de umidade e a ocupação, que é a variável alvo.
 
 Os arquivos ficam na pasta `data/`. O notebook baixa os dados automaticamente caso ainda não existam.
 
@@ -59,17 +59,19 @@ Organizei as tarefas em um quadro no GitHub Projects, uma por fase do notebook. 
 
 ## Análise exploratória
 
-A base tem duas classes, com cerca de 64% de leituras de ambiente desocupado e 36% de ocupado. A luminosidade é a variável mais relacionada à ocupação (correlação de 0,93), seguida pelo CO2 (0,77). A razão de umidade é muito correlacionada com a umidade e o CO2, por ser derivada de temperatura e umidade.v
+A base tem duas classes, com cerca de 64% de leituras de ambiente desocupado e 36% de ocupado.<br>A luminosidade é a variável mais relacionada à ocupação (correlação de 0,93), seguida pelo CO2 (0,77). A razão de umidade é muito correlacionada com a umidade e o CO2, por ser derivada de temperatura e umidade.v
 
 ## Limpeza dos dados
 
-Removi 82 linhas duplicadas (de 2665 para 2583) e não encontrei valores ausentes. Nos boxplots, só a luminosidade tem outliers (3 leituras), que mantive por parecerem leituras reais. A base tratada é salva em `data/processed/`.
+Removi 82 linhas duplicadas (de 2665 para 2583) e não encontrei valores ausentes.<br>Nos boxplots, só a luminosidade tem outliers (3 leituras), que mantive por parecerem leituras reais. A base tratada é salva em `data/processed/`.
 
 ## Feature engineering
 
-Criei a variável `razao_co2_luz`, calculada como CO2 dividido por (luminosidade + 1), somando 1 para evitar divisão por zero, já que cerca de 59% das leituras têm luminosidade zero.
+Criei a variável `razao_co2_luz`, calculada como CO2 dividido por (luminosidade + 1), somando 1 para evitar divisão por zero, já que cerca de 59% das leituras têm luminosidade zero.<br>Ela tem correlação de -0,87 com a ocupação e combina as duas variáveis mais relacionadas ao alvo.
 
-Ela tem correlação de -0,87 com a ocupação e combina as duas variáveis mais relacionadas ao alvo.
+## Divisão dos dados
+
+Dividi a base em 80% para treino e 20% para teste, com estratificação pela variável alvo e semente fixa (`random_state=42`).<br>A divisão é feita antes de qualquer escalonamento, para evitar vazamento de dados do conjunto de teste para o treino.
 
 ## Resultados
 

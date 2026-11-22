@@ -65,6 +65,12 @@ A base tem duas classes, com cerca de 64% de leituras de ambiente desocupado e 3
 
 Removi 82 linhas duplicadas (de 2665 para 2583) e não encontrei valores ausentes. Nos boxplots, só a luminosidade tem outliers (3 leituras), que mantive por parecerem leituras reais. A base tratada é salva em `data/processed/`.
 
+## Feature engineering
+
+Criei a variável `razao_co2_luz`, calculada como CO2 dividido por (luminosidade + 1), somando 1 para evitar divisão por zero, já que cerca de 59% das leituras têm luminosidade zero.
+
+Ela tem correlação de -0,87 com a ocupação e combina as duas variáveis mais relacionadas ao alvo.
+
 ## Resultados
 
 Será preenchido ao final do projeto.

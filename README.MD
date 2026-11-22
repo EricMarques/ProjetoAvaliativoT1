@@ -77,6 +77,10 @@ Dividi a base em 80% para treino e 20% para teste, com estratificação pela var
 
 Apliquei o `StandardScaler` só nos dados do KNN, ajustando (`fit_transform`) com o treino e apenas aplicando (`transform`) no teste.<br>A árvore de decisão usa os dados originais, porque o escalonamento não altera os cortes que ela encontra.
 
+## Ajuste de hiperparâmetros
+
+Testei o KNN com K = 1, 3, 5, 7 e 15 e a árvore de decisão com `max_depth` = 2, 3, 5, 10 e sem limite, comparando a acurácia no treino e no teste.<br>Houve overfitting leve com K = 1 e com as árvores mais profundas (profundidade 10 e sem limite).<br>As configurações mais estáveis foram K = 3 e `max_depth=5`, ambas com acurácia de teste acima de 99%.
+
 ## Resultados
 
 Será preenchido ao final do projeto.

@@ -41,12 +41,25 @@ flowchart LR
 ```
 
 ## Estrutura do repositório
-
-- `data/raw/`: arquivos originais da base, sem alteração
-- `data/processed/`: dados tratados, gerados no notebook
-- `notebooks/analise_exploratoria.ipynb`: notebook com todo o pipeline
-- `requirements.txt`: dependências com as versões usadas
-- `README.md`: esta documentação
+```
+ProjetoAvaliativoT1
+│
+├── `data`
+│     ├──`processed`
+│     │    └── ocupacao_tratada.csv                     # arquivos processados após limpezas
+│     └──`raw` 
+│          ├── datatest.txt                             # arquivos originais de teste da base, sem alteração
+│          ├── datatest2.txt                            # arquivos originais de teste da base, sem alteração
+│          └── datatraining.txt                         # arquivos originais de treino da base, sem alteração
+├── `images`
+│     └── correlacao.png                                # imagem de relatório de heatmap
+├── `notebooks`
+│     └── analise_exploratoria.ipynb                    # notebook com todo o pipeline
+├── `.gitignore`                                        # diretórios e arquivos ignorados em versionamentos
+├── `instalar.bat`                                      # arquivo facilitador que instala virtualenv e demais dependências do projeto
+├── `README.md`                                         # documentação do projeto
+└── `requirements.txt`                                  # dependências com as respectivas versões usadas
+```
 
 ## Como executar
 
@@ -65,6 +78,9 @@ No Linux ou macOS, a ativação é `source venv/bin/activate`.
 ```
 pip install -r requirements.txt
 ```
+
+No Windows, também é possível executar o arquivo `instalar.bat`, que cria o ambiente virtual e instala as dependências automaticamente.
+
 
 4. Abra o notebook em `notebooks/analise_exploratoria.ipynb` e execute as células em ordem.
 
@@ -115,3 +131,14 @@ No conjunto de teste, a árvore de decisão (`max_depth=5`) teve acurácia de 99
 - Usar os três arquivos da base original como foram propostos (um para treino e dois para teste) e coletar dados de mais dias e ambientes.
 - Avaliar outras métricas, como precisão, recall e matriz de confusão, e não só a acurácia.
 - Testar a previsão em fluxo contínuo, como em um sistema em tempo real.
+
+## Vídeo de defesa
+ 
+Apresentação técnica do projeto em formato de Review de Sprint:
+- pipeline Python
+- modelo estrela no MySQL
+- dashboard no Power BI
+- planejamento em Sprints
+- histórico de commits.
+
+[Assista ao vídeo no Google Drive](LINK)

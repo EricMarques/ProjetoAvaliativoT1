@@ -44,21 +44,21 @@ flowchart LR
 ```
 ProjetoAvaliativoT1
 │
-├── `data`
-│     ├──`processed`
+├── data
+│     ├── processed
 │     │    └── ocupacao_tratada.csv                     # arquivos processados após limpezas
-│     └──`raw` 
+│     └── raw 
 │          ├── datatest.txt                             # arquivos originais de teste da base, sem alteração
 │          ├── datatest2.txt                            # arquivos originais de teste da base, sem alteração
 │          └── datatraining.txt                         # arquivos originais de treino da base, sem alteração
-├── `images`
+├── images
 │     └── correlacao.png                                # imagem de relatório de heatmap
-├── `notebooks`
+├── notebooks
 │     └── analise_exploratoria.ipynb                    # notebook com todo o pipeline
-├── `.gitignore`                                        # diretórios e arquivos ignorados em versionamentos
-├── `instalar.bat`                                      # arquivo facilitador que instala virtualenv e demais dependências do projeto
-├── `README.md`                                         # documentação do projeto
-└── `requirements.txt`                                  # dependências com as respectivas versões usadas
+├── .gitignore                                          # diretórios e arquivos ignorados em versionamentos
+├── instalar.bat                                        # arquivo facilitador que instala virtualenv e demais dependências do projeto
+├── README.md                                           # documentação do projeto
+└── requirements.txt                                    # dependências com as respectivas versões usadas
 ```
 
 ## Como executar

@@ -97,7 +97,7 @@ flowchart LR
 
 ## Análise exploratória
 
-A base tem duas classes, com cerca de 64% de leituras de ambiente desocupado e 36% de ocupado.<br>A luminosidade é a variável mais relacionada à ocupação (correlação de 0,93), seguida pelo CO2 (0,77). A razão de umidade é muito correlacionada com a umidade e o CO2, por ser derivada de temperatura e umidade.v
+A base tem duas classes, com cerca de 64% de leituras de ambiente desocupado e 36% de ocupado.<br>A luminosidade é a variável mais relacionada à ocupação (correlação de 0,93), seguida pelo CO2 (0,77). A razão de umidade é muito correlacionada com a umidade e o CO2, por ser derivada de temperatura e umidade.
 
 ![Correlação de Pearson entre as variáveis](images/correlacao.png)
 

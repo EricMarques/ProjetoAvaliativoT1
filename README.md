@@ -86,7 +86,8 @@ No Windows, também é possível executar o arquivo `instalar.bat`, que cria o a
 
 ## Organização do trabalho
 
-Organizei as tarefas em um quadro no GitHub Projects, uma por fase do notebook. Usei a branch `develop` para reunir o trabalho e criei uma branch de feature para cada tarefa, integrada por pull request.
+Organizei as tarefas em um [quadro no GitHub Projects](https://github.com/users/EricMarques/projects/4), com um card por fase do notebook, além de cards para o README e a revisão final, movidos de To Do para In Progress e Done conforme o trabalho avançava.<br>Usei a branch `develop` para reunir o trabalho e criei uma branch de feature para cada tarefa, integrada por pull request.
+
 
 ```mermaid
 flowchart LR

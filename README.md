@@ -44,21 +44,21 @@ flowchart LR
 ```
 ProjetoAvaliativoT1
 │
-├── `data`
-│     ├──`processed`
+├── data
+│     ├── processed
 │     │    └── ocupacao_tratada.csv                     # arquivos processados após limpezas
-│     └──`raw` 
+│     └── raw 
 │          ├── datatest.txt                             # arquivos originais de teste da base, sem alteração
 │          ├── datatest2.txt                            # arquivos originais de teste da base, sem alteração
 │          └── datatraining.txt                         # arquivos originais de treino da base, sem alteração
-├── `images`
+├── images
 │     └── correlacao.png                                # imagem de relatório de heatmap
-├── `notebooks`
+├── notebooks
 │     └── analise_exploratoria.ipynb                    # notebook com todo o pipeline
-├── `.gitignore`                                        # diretórios e arquivos ignorados em versionamentos
-├── `instalar.bat`                                      # arquivo facilitador que instala virtualenv e demais dependências do projeto
-├── `README.md`                                         # documentação do projeto
-└── `requirements.txt`                                  # dependências com as respectivas versões usadas
+├── .gitignore                                          # diretórios e arquivos ignorados em versionamentos
+├── instalar.bat                                        # arquivo facilitador que instala virtualenv e demais dependências do projeto
+├── README.md                                           # documentação do projeto
+└── requirements.txt                                    # dependências com as respectivas versões usadas
 ```
 
 ## Como executar
@@ -135,11 +135,9 @@ No conjunto de teste, a árvore de decisão (`max_depth=5`) teve acurácia de 99
 
 ## Vídeo de defesa
  
-Apresentação técnica do projeto em formato de Review de Sprint:
-- pipeline Python
-- modelo estrela no MySQL
-- dashboard no Power BI
-- planejamento em Sprints
+Apresentação técnica do projeto:
+- pipeline Python/ipynb
+- planejamento em cards/tasks
 - histórico de commits.
 
-[Assista ao vídeo no Google Drive](LINK)
+[Assista ao vídeo no Google Drive](https://drive.google.com/file/d/1DmqTrtaMTLylA4lZi3juGeAd8gXxnIg4/view?usp=drive_link)

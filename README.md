@@ -135,11 +135,9 @@ No conjunto de teste, a árvore de decisão (`max_depth=5`) teve acurácia de 99
 
 ## Vídeo de defesa
  
-Apresentação técnica do projeto em formato de Review de Sprint:
-- pipeline Python
-- modelo estrela no MySQL
-- dashboard no Power BI
-- planejamento em Sprints
+Apresentação técnica do projeto:
+- pipeline Python/ipynb
+- planejamento em cards/tasks
 - histórico de commits.
 
-[Assista ao vídeo no Google Drive](LINK)
+[Assista ao vídeo no Google Drive](https://drive.google.com/file/d/1DmqTrtaMTLylA4lZi3juGeAd8gXxnIg4/view?usp=drive_link)
